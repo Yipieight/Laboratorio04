@@ -15,7 +15,7 @@ namespace Laboratorio04
 
             for (int i = 0; i < billetes.GetLength(0); i++)
             {
-                int denominacion = billetes[i,0];
+                int denominacion = billetes[i, 0];
                 int limite = billetes[i,1];
 
                 if (limite >= 0 || limite == int.MaxValue)
