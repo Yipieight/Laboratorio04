@@ -11,19 +11,22 @@ namespace Laboratorio04
     {
         public int[] CalcularBilletes(int cantidad, int[] billetes)
         {
-            int[] suma = new int[billetes.Length];
-            int disponible = 0;
-            int resta = cantidad;
-            string resultado = "";
+            
+            int[] resultado = new int[billetes.Length];
+
             for (int i = 0; i < billetes.Length; i++)
             {
-                resta = resta - disponible;
-                suma[i] = resta / billetes[i];
-                disponible = suma[i] * billetes[i];
-                resultado = suma[0]+","+ suma[1]+ "," + suma[2]+ "," + suma[3]+ "," + suma[4];
+                // Calcular cuántos billetes se necesitan para cubrir la cantidad restante.
+                int cantidadDeBilletes = cantidad / billetes[i];
+
+                // Guardar la cantidad de billetes necesarios en el arreglo de resultados.
+                resultado[i] = cantidadDeBilletes;
+
+                // Restar la cantidad de dinero cubierta por los billetes ya calculados.
+                cantidad -= cantidadDeBilletes * billetes[i];
             }
 
-            return new int[resultado];
+            return resultado;
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Laboratorio04Tests
 
             int[] resultadoActual = ejercicio5.CalcularBilletes(cantidad, billetes);
 
-            Assert.AreEqual(resultado.Length, resultadoActual.Length, "El resultado no tiene la cantidad de billetes esperada");
+            Assert.AreEqual(resultado.GetLength(0), resultadoActual.GetLength(0), "El resultado no tiene la cantidad de billetes esperada");
 
-            for (int i = 0; i < resultado.Length; i++)
+            for (int i = 0; i < resultado.GetLength(0); i++)
             {
                 Assert.AreEqual(resultado[i], resultadoActual[i], $"El resultado ${i} no es correcto");
             }
